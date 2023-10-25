@@ -27,25 +27,27 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <div class="input-container">
       <h1 class="login-h1">Login</h1>
       <p class="login-p">Digite suas informações para acessar sua conta</p>
 
-      <form>
+      <form id="login-form" novalidate>
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">
-                <i class="bi bi-person"></i>
+                <i class="bi bi-person icon"></i>
               </span>
               <input
                 type="email"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="input-email"
                 aria-describedby="emailHelp"
                 placeholder="Email"
+                required
               />
             </div>
           </div>
@@ -55,19 +57,22 @@
           <div class="input-group">
             <div class="input-group-prepend">
               <span class="input-group-text">
-                <i class="bi bi-lock"></i>
+                <i class="bi bi-lock icon"></i>
               </span>
               <input
                 type="password"
                 class="form-control"
-                id="exampleInputPassword1"
+                id="input-password"
                 placeholder="Senha"
+                required
               />
             </div>
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Login in</button>
+        <button type="submit" class="btn btn-primary" id="submit-button">
+          Login in
+        </button>
 
         <div class="create-account">
           <p>Não tem uma conta?</p>
@@ -76,6 +81,6 @@
       </form>
     </div>
 
-    <script src="main.js"></script>
+    <script src="validatingLoginForm.js"></script>
   </body>
 </html>
