@@ -5,43 +5,31 @@ document.getElementById('registration-form').addEventListener('submit', function
   const emailInput = document.getElementById('input-email');
   const passwordInput1 = document.getElementById('input-password');
   const passwordInput2 = document.getElementById('input-confirm-password');
+  const emailError = document.getElementById('email-error');
+  const passwordError = document.getElementById('password-error');
+  const confirmError = document.getElementById('confirm-error');
+
+  emailError.textContent = '';
+  passwordError.textContent = '';
+  confirmError.textContent = '';
 
   if (!document.getElementById('registration-form').checkValidity()) {
-    Swal.fire({
-      title: 'Error!',
-      text: 'Por favor, preencha os campos corretamente.',
-      icon: 'error',
-      confirmButtonText: 'OK'
-    });
+    confirmError.textContent = 'Digite as informações corretamente';
     event.preventDefault();
   }
 
   if (!emailRegex.test(emailInput.value)) {
-    Swal.fire({
-      title: 'Erro!',
-      text: 'Por favor, insira um email válido.',
-      icon: 'error',
-      confirmButtonText: 'OK'
-    });
+    emailError.textContent = 'Por favor, insira um email válido.';
     event.preventDefault();
   }
 
   if (!passwordRegex.test(passwordInput1.value)) {
-    Swal.fire({
-      title: 'Erro!',
-      text: 'A senha deve ter no mínimo 8 caracteres.',
-      icon: 'error',
-      confirmButtonText: 'OK'
-    });
+    passwordError.textContent = 'A senha deve ter pelo menos 8 caracteres.';
     event.preventDefault();
   }
 
-  if (passwordInput1.value === passwordInput2.value) {
-    Swal.fire({
-      title: 'Erro!',
-      text: 'As senhas não coincidem.',
-      icon: 'error',
-      confirmButtonText: 'OK'
-    });
+  if (passwordInput1.value !== passwordInput2.value) {
+    confirmError.textContent = 'As senhas não coincidem.';
+    event.preventDefault();
   }
 });

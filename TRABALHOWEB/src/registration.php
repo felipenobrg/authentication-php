@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -31,10 +31,10 @@
   </head>
   <body>
     <div class="input-container">
-      <h1 class="login-h1">Login</h1>
-      <p class="login-p">Digite suas informações para acessar sua conta</p>
+      <h1 class="login-h1">Cadastro</h1>
+      <p class="login-p">Digite suas informações para cadastrar sua conta</p>
 
-      <form id="login-form" novalidate>
+      <form id="registration-form" novalidate>
         <div class="form-group">
           <div class="input-group">
             <div class="input-group-prepend">
@@ -52,6 +52,7 @@
             </div>
           </div>
         </div>
+        <p id="email-error" class="error-message"></p>
 
         <div class="form-group">
           <div class="input-group">
@@ -69,18 +70,30 @@
             </div>
           </div>
         </div>
-
-        <button type="submit" class="btn btn-primary" id="submit-button">
-          Login in
-        </button>
-
-        <div class="create-account">
-          <p>Não tem uma conta?</p>
-          <a href="registration.html">Cadastre agora</a>
+        <p id="password-error" class="error-message"></p>
+        
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">
+                <i class="bi bi-lock icon"></i>
+              </span>
+              <input
+                type="password"
+                class="form-control"
+                id="input-confirm-password"
+                placeholder="Confirme a senha"
+                required
+              />
+            </div>
+          </div>
         </div>
+        <p id="confirm-error" class="error-message"></p>
+
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
       </form>
     </div>
 
-    <script src="validatingLoginForm.js"></script>
+    <script src="validatingRegistrationForm.js"></script>
   </body>
 </html>
