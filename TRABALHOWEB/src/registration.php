@@ -20,42 +20,11 @@
 </head>
 
 <body>
-
-  <?php
-  if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-
-    if (empty($email)) {
-      die("Email não pode ser vazio.");
-    }
-
-    $mysqli = require __DIR__ . "/database.php";
-
-    $sql = "INSERT INTO users (email, password) VALUES (?, ?)";
-
-    $stmt = $mysqli->stmt_init();
-
-    if (!$stmt->prepare($sql)) {
-      die("Error in SQL" . $mysqli->error);
-    }
-
-    $stmt->bind_param("ss", $email, $password);
-    echo "Before database operation<br>";
-    if ($stmt->execute()) {
-      echo "Success!";
-    } else {
-      echo "Error: " . $stmt->error;
-      echo "Database Error: " . mysqli_error($mysqli);
-    }
-  }
-  ?>
-
   <div class="input-container">
     <h1 class="login-h1">Cadastro</h1>
     <p class="login-p">Digite suas informações para cadastrar sua conta</p>
 
-    <form id="registration-form" action="registration.php" method="POST" novalidate>
+    <form id="registration-form" action="processRegistration.php" method="POST" novalidate>
       <div class="form-group">
         <div class="input-group">
           <div class="input-group-prepend">
