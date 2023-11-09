@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <p class="login-p">Digite suas informações para acessar sua conta</p>
 
     <?php if ($is_invalid): ?>
-      <em>Login inválido</em>
+      <em class="error-message"></>Login inválido</em>
     <?php endif; ?>
 
     <form action="login.php" id="login-form" method="POST" novalidate>

@@ -11,7 +11,7 @@
         database: $dbname);
 
     if ($mysqli->connect_errno) {
-        die("Connection error: " . $mysqli->connect_error);
+        die("Erro de conexão: " . $mysqli->connect_error);
     }
 
     return $mysqli
