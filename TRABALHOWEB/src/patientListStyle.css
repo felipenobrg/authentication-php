@@ -1,0 +1,54 @@
+:root {
+    --primary-blue: #3E37F7;
+    --white: #fff;
+    --gray: #909090;
+    --red: #FF0000;
+    --black: #000000;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: var(--background-color);
+    -webkit-font-smoothing: antialiased;
+}
+
+button {
+    cursor: pointer;
+}
+
+.table-container {
+    width: 50%;
+}
+
+.patientListContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    flex-direction: column;
+}
+
+.patientListContainer h1 {
+  color: var(--primary-blue);
+}
+
+.patientListContainer a {
+    text-decoration: none;
+    color: var(--gray);
+}
+
+.patientListContainer a:hover {
+    color: var(--black);
+    transition: 0.3s ease;
+}
+
+.table {
+    width: 80%;
+    margin-top: 4rem;
+}

@@ -13,6 +13,26 @@ if (isset($_SESSION["user_id"])) {
     $user = $result->fetch_assoc();
 }
 
+if (isset($_SESSION["user_id"])) {
+    $mysqli = require __DIR__ . "/database.php";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $name = $_POST["name"];
+        $age = $_POST["age"];
+        $weight = $_POST["weight"];
+        $height = $_POST["height"];
+
+        $bmi = $weight / (($height / 100) * ($height / 100));
+
+        $sql = "INSERT INTO patientregistration (name, age, weight, height, bmi) VALUES ('$name', $age, $weight, $height, $bmi)";
+        $result = $mysqli->query($sql);
+        header("Location: patientList.php");
+    }
+
+    $sql = "SELECT * FROM users WHERE id = {$_SESSION["user_id"]}";
+    $result = $mysqli->query($sql);
+    $user = $result->fetch_assoc();
+}
 
 ?>
 <!DOCTYPE html>
@@ -41,12 +61,12 @@ if (isset($_SESSION["user_id"])) {
                 <h1>Cadastro de Paciente</h1>
                 <div class="navigation-container">
                     <a href="patientRegistration.php">Cadastro de Pacientes |</a>
-                    <a href="">Listar pacientes |</a>
+                    <a href="patientList.php">Lista de pacientes |</a>
                     <a href="logout.php">Log out</a>
                 </div>
             </div>
 
-            <form action="patientRegistration.php" class="form-container" id="login-form" method="POST" novalidate>
+            <form action="patientRegistration.php" class="form-container" id="login-form" method="POST">
                 <div class="form-group">
                     <div class="input-group">
                         <div class="input-group-prepend">

@@ -31,12 +31,12 @@ button {
 
 .registrationContainer h1 {
     color: var(--primary-blue);
-    font-weight: bold;
 }
 
 .navigation-container a {
     text-decoration: none;
     color: var(--gray);
+    margin-bottom: 2rem;
 }
 
 .navigation-container a:hover {
@@ -55,21 +55,21 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
     flex-direction: column;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 30rem;
     height: 30rem;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
+    position: absolute;
 }
 
 .input-style {
     padding: 0.5rem;
-    width: 20rem;
+    width: 15rem;
     border-radius: 8px;
     border: 1px solid var(--gray);
+    margin-top: 1rem;
 }
