@@ -2,7 +2,6 @@
 <p align="center">Behold, a testament to my academic prowess—a project conceived for a college test, showcasing functional authentication powered primarily by PHP and fortified with a MySQL database.</p>
 
 <p align="center">
-  <a href="#-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-features"> Features </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
     <a href="#-technologies"> Technologies </a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
     <a href="#-layout">Layout</a>
