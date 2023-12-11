@@ -11,7 +11,6 @@
 
 <p align="center">
   <img src="https://github.com/felipenobrg/project-college-php/assets/122055576/d55d88ca-c062-4798-8a9f-4d81e2b86e46" />
-
 </p>
 
 **## :fire: Features
